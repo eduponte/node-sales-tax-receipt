@@ -1,7 +1,7 @@
 {
   "name": "node-sales-tax-receipt",
   "version": "0.0.0",
-  "description": "Writing testable HTTP APIs - the basics",
+  "description": "A sales tax exercise implementation based on node",
   "scripts": {
     "test": "mocha spec --recursive"
   },

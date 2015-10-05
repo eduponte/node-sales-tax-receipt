@@ -2,22 +2,22 @@ var exemptKeywords = [
   'chocolate',
   'book',
   'pills'
-]
+];
 
 var importedKeywords = [
   'imported'
-]
+];
 
-var exemptRegExp = new RegExp(exemptKeywords.join("|"))
+var exemptRegExp = new RegExp(exemptKeywords.join("|")),
   importedRegExp = new RegExp(importedKeywords.join("|"));
 
 var isExempt = function(product) {
   return (exemptRegExp.test(product));
-}
+};
 
 var isImported = function(product) {
   return (importedRegExp.test(product));
-}
+};
 
 var getTaxes = function(isExempt, isImported) {
   var basic = (isExempt ? 0 : 10),
@@ -26,8 +26,8 @@ var getTaxes = function(isExempt, isImported) {
     basic: basic,
     imported: imported,
     totalPercent: basic + imported
-  }
-}
+  };
+};
 
 exports.create = function(rawName) {
   var imported = isImported(rawName),
@@ -45,5 +45,5 @@ exports.create = function(rawName) {
     isExempt: isExempt(rawName),
     name: name,
     taxes: getTaxes(exempt,imported)
-  }
-}
+  };
+};

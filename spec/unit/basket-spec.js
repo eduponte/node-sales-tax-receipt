@@ -35,8 +35,8 @@ describe('basket', function() {
 
   it('accumulates totals for the final summary', function(done) {
     var basket = basketFactory.create();
-    var basketLine = basket.addLine('1 imported bottle of perfume at 47.50');
-    var basketLine = basket.addLine('1 ding dong at 6.30');
+    basket.addLine('1 imported bottle of perfume at 47.50');
+    basket.addLine('1 ding dong at 6.30');
     basket.getTotals(function(tot,tax) {
       expect(tot.toNumber()).to.eq(61.60);
       expect(tax.toNumber()).to.eq(7.80);
