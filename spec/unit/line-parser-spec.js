@@ -2,7 +2,7 @@ var expect = require('chai').expect;
 
 var lineParser = require('../../app/line-parser');
 
-describe('line-builder', function() {
+describe('line-parser', function() {
 
   it('gets quantity', function() {
     var line = lineParser.parse('1 box of chocolates at 11.25');

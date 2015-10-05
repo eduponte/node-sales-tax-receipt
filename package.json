@@ -7,8 +7,7 @@
   },
   "dependencies": {
     "decimal.js": "^4.0.2",
-    "split": "^1.0.0",
-    "stream": "0.0.2"
+    "split": "^1.0.0"
   },
   "devDependencies": {
     "chai": "^3.3.0",

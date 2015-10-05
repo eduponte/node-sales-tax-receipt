@@ -1,5 +1,4 @@
 var fs = require('fs');
-var split = require('split');
 var expect = require('chai').expect;
 var util = require('util');
 var Writable = require('stream').Writable;
