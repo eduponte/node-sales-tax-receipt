@@ -29,6 +29,15 @@ var getTaxes = function(isExempt, isImported) {
   };
 };
 
+/**
+* Creates a product object from its raw description. This implementation bases
+* its tax and final product name decisions on keyword matching. More
+* sophisticated approaches could consider other product catalogs, such as DBs.
+*
+* @method create
+* @param {String} raw product name
+* @return {Object} The qualified product {isImported, isExempt, name, taxes}
+*/
 exports.create = function(rawName) {
   var imported = isImported(rawName),
     exempt = isExempt(rawName),

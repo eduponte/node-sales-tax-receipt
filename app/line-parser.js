@@ -15,6 +15,14 @@ var round = function(rawTax) {
   return roundedVal;
 };
 
+/**
+* Parses a (string) line in its input format and builds a basket line with the
+* properties needed to output a receipt.
+*
+* @method parse
+* @param {String} The line in its input format
+* @return {Object} The basket line, with its quantity, description, lineTaxes, shelfPrine and lineBasePrice properties
+*/
 exports.parse = function(line) {
   if (line) {
     var splitted = line.split(/\s+/);

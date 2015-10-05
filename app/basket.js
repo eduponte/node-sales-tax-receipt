@@ -1,6 +1,13 @@
 var lineParser = require('./line-parser');
 var Decimal = require('decimal.js');
 
+/**
+* Creates a new basket object on which two basic operations can be called:
+* addLine and getTotals
+*
+* @method create
+* @return {Object} An object with the basic basket opertations
+*/
 exports.create = function() {
 
   var basket = {

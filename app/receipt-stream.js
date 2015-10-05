@@ -4,6 +4,13 @@ var Transform = require("stream").Transform;
 var basketFactory = require('./basket'),
   formatter = require('./formatter');
 
+/**
+* A transform stream that takes the input lines and pushes the formatted output
+* lines. It performs a final flush operation to output totals.
+*
+* @class ReceiptStream
+* @constructor
+*/
 function ReceiptStream() {
   Transform.call(this, {
     "objectMode": true
@@ -29,6 +36,11 @@ ReceiptStream.prototype._flush = function(done) {
   }.bind(this));
 };
 
+/**
+* Exports a new ReceiptStream.
+*
+* @return {ReceiptStream} The stream
+*/
 module.exports = function() {
   return new ReceiptStream();
 };

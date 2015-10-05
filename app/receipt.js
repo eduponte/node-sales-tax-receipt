@@ -3,6 +3,11 @@ var split = require('split');
 var receiptStream = require('./receipt-stream');
 var PassThrough = require('stream').PassThrough;
 
+/**
+* A stream that combines several streams.
+*
+* @class StreamCombiner
+*/
 var StreamCombiner = function() {
 
   this.streams = Array.prototype.slice.apply(arguments);
@@ -28,6 +33,11 @@ StreamCombiner.prototype.pipe = function(dest, options) {
   return this.transformStream.pipe(dest, options);
 };
 
+/**
+* Exports a stream that takes the raw basket input and outputs a receipt.
+*
+* @returns a stream that combines a split with a receiptStream
+*/
 module.exports = function() {
   return new StreamCombiner(split(), receiptStream());
 };
