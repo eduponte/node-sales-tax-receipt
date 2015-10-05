@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "A sales tax exercise implementation based on node",
   "scripts": {
-    "test": "mocha spec --recursive"
+    "test": "mocha spec/**/*spec.js --recursive"
   },
   "dependencies": {
     "decimal.js": "^4.0.2",
