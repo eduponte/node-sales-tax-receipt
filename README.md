@@ -3,7 +3,7 @@ Sales tax exercise using javascript node technologies.
 
 ## The app
 
-Just do:
+Just type:
 
     npm install
 
@@ -96,6 +96,11 @@ And hopefully you will get an output similar to that:
     V creates an exempt imported product given a name
     V creates a regular but imported product given a name
 
+  receipt stream
+    V creates a transformer that can be piped
+    V keeps a basket where it can accumulate totals
+    V outputs a basic line with totals
 
-  23 passing (44ms)
+
+  26 passing (44ms)
 ```
