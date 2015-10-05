@@ -44,19 +44,19 @@ process.stdin
   .pipe(process.stdout);
 ```
 The internal collaborating modules are:
-- ```receipt```: the main transform stream. It pipes an initial ```split``` transform with a ```receipt-stream``` transform for every basket line.
+- ```receipt```: the main transform stream. It pipes the the source through an initial ```split``` transform and then a ```receipt-stream``` transform for every basket line.
 - ```basket```: The basket builder. Creates a new basket object on which two basic operations can be called: ```addLine``` and ```getTotals```.
 - ```line-parser```: Parses a (string) line in its input format and builds a basket line with the properties needed to output a receipt.
 - ```product```: Creates a product object from its raw description. This implementation bases its tax and final product name decisions on keyword matching. More sophisticated approaches could consider other product catalogs, such as DBs.
-- ```formatter```: Outputs the receipt lines in the expected receipt format.
+- ```formatter```: Outputs the receipt lines according to the expected receipt format.
 
 ## The specs
 
 The ```spec``` folder contains both unit and integration tests. Specs are run by [mocha](https://mochajs.org/). [chai](http://chaijs.com/) does a good job regarding assertions.
-- The integration spec tests the transform stream E2E. It matches the output for known inputs with its expected receipts.
-- The unit specs test the several modules of the system, focusing on each module exports.
+- The integration spec tests E2E the transform stream. It matches the output for known inputs with its expected receipts.
+- The unit specs test the different modules in the system, focusing on each particular module exports.
 
-That said, you can stop the server and run:
+You can run the tests:
 
     npm test
 
