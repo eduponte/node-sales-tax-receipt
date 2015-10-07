@@ -1,4 +1,7 @@
 # node-sales-tax-receipt
+
+[![Build Status](https://travis-ci.org/eduponte/node-sales-tax-receipt.svg?branch=master)](https://travis-ci.org/eduponte/node-sales-tax-receipt)
+
 Sales tax exercise using javascript node technologies.
 
 ## The app
